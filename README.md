@@ -1,6 +1,6 @@
 # Chess Grandmasters Profile Viewer
 
-This project is a frontend application that fetches and displays a list of Chess Grandmasters from the [Chess.com public API](https://www.chess.com/news/view/published-data-api), with detailed profile information shown in a modal. Built using **React**, **TypeScript**, and **Material UI**.
+This is a frontend application that fetches and displays a list of Chess Grandmasters from the [Chess.com public API](https://www.chess.com/news/view/published-data-api), with detailed profile information shown in a modal. Built using **React**, **TypeScript**, and **Material UI**.
 
 ## Suboptimal Compromises
 
