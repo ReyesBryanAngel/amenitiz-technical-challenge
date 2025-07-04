@@ -13,6 +13,9 @@ The UI currently does not display a loading indicator while fetching user data.
 This may cause confusion if the API response is delayed, as users might think the app is unresponsive.  
 In a production setting, I would add a **skeleton loader or spinner** to clearly indicate that data is being loaded and the app is actively working.
 
+Additionally, I would consider integrating **TanStack Query (React Query)** to better manage API fetching, caching, and loading states automatically.  
+It also improves data consistency, reduces duplicate requests, and simplifies loading/error handling.
+
 ### 3. Hardcoded base URL in API requests
 The current implementation uses a hardcoded base URL directly in Axios calls (e.g., `https://api.chess.com`).  
 In production, I would configure Axios to use an environment-based `baseURL` via `.env` variables and a reusable Axios instance, making the codebase easier to maintain and more adaptable across environments.
