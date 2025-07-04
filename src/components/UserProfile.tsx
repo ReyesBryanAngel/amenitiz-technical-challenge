@@ -173,7 +173,7 @@ const UserProfile = ({ open, onClose, userInfo }: ModalProps) => {
             />
           </Box>
         </>
-        <Box sx={{ mt: 2}}>
+        <Box sx={{ mt: 2 }}>
           <LastOnlineCounter lastOnline={userInfo?.last_online || 0} />
         </Box>
       </DialogContent>
