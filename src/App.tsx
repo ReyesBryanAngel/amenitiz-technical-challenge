@@ -1,15 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 import './App.css'
+import UserList from './components/UserList'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [chessGM, setChessGM] = useState<string[]>([])
+  useEffect(() => {
+    const fetchChessGM = async () => {
+      try {
+        const response = await axios.get(`https://api.chess.com/pub/titled/GM`)
+        setChessGM(response.data.players)
+      } catch (error: unknown) {
+        console.error('Error fetching chess GM:', error)
+      }
+    }
+
+    fetchChessGM()
+  }, [])
 
   return (
     <>
-      <div className='text-4xl'>Challenge Start</div>
-        
+      <UserList users={chessGM} />
     </>
   )
 }
