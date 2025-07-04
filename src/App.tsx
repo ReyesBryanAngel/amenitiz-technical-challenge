@@ -1,21 +1,12 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 import './App.css'
 import UserList from './components/UserList'
+import { fetchChessGM } from './services/user.services'
 
 function App() {
   const [chessGM, setChessGM] = useState<string[]>([])
   useEffect(() => {
-    const fetchChessGM = async () => {
-      try {
-        const response = await axios.get(`https://api.chess.com/pub/titled/GM`)
-        setChessGM(response.data.players)
-      } catch (error: unknown) {
-        console.error('Error fetching chess GM:', error)
-      }
-    }
-
-    fetchChessGM()
+    fetchChessGM(setChessGM)
   }, [])
 
   return (
